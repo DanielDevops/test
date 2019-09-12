@@ -66,5 +66,7 @@ function magic() {
 if (n !== p) {
   console.log('hello world');
 } else {
-  document.querySelector(s).addEventListener('input', magic);
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector(s).addEventListener('input', magic);
+  });
 }
